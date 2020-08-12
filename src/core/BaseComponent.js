@@ -48,8 +48,6 @@ class BaseComponent {
         for (const child of children) {
             //if child is typeof string, then it should an HTML string
             if (typeof child === 'string') {
-                parentNode.innerHTML += child;
-
                 parentNode.insertAdjacentHTML(WHERE[methodName], child)
                 continue;
             }
