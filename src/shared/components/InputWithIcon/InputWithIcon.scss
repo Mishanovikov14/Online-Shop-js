@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+
+.input-with-icon {
+    position: relative;
+
+    &__input {
+        padding-right: 4rem;
+        width: 100%;
+    }
+
+    &__btn {
+        $size: 3rem;
+
+        top: calc(50% - #{$size} / 2);
+        right: 1rem;
+        outline: none;
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        font-size: 1.8rem;
+        width: $size;
+        height: $size;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $dark-clr;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 
+            background-color 200ms ease,
+            color 200ms ease;
+
+        &:focus,
+        &:hover {
+            color: $light-clr;
+            background-color: $primary-clr;
+        }
+    }
+}

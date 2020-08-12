@@ -1,0 +1,24 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+
+.main-layout {
+    &__header {
+        padding: 1.5rem;
+        background-color: $primary-clr;
+        @include primary-lg;
+
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-title {
+            color: $light-clr;
+        }
+
+        &-icon {
+            margin-left: .5rem;
+        }
+    }
+}

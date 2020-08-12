@@ -1,0 +1,11 @@
+@import './variables.scss';
+
+@mixin primary-lg($direction: to right) {
+    background-image: linear-gradient(#{$direction}, #dd1818, #333333) ;
+}
+
+@mixin media($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}

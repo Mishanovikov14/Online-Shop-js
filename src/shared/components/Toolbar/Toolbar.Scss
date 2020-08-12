@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+
+    &__categories {
+        display: flex;
+    }
+
+    &__btn {
+        margin-right: 1.5rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__search {
+        max-width: 30rem;
+        width: 100%;
+    }
+
+}

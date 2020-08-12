@@ -1,0 +1,15 @@
+@import '../../../../styles/variables.scss';
+
+.main-layout {
+    &__footer {
+        background-color: $dark-clr;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    &__copyright {
+        color: $light-clr;
+        font-size: 1.4rem;
+        letter-spacing: .1rem;
+    }
+}

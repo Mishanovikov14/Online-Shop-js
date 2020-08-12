@@ -1,0 +1,120 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    &::before,
+    &::after{
+        @extend *;
+    }
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family:$ff-common;
+    font-size: $fz-default;
+    font-weight: $fw-normal;
+}
+
+button,
+input,
+textarea {
+    font-size: $fz-default;
+    font-family: $ff-common;
+}
+
+.content-wrapper {
+    max-width: 140rem;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: $fz-title;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.primary-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $light-clr;
+
+    &:not(&--simple) {
+        @include primary-lg(45deg);
+        transition: box-shadow 200ms ease;
+
+        &:hover {
+            box-shadow: 0 0 .6rem $dark-clr;
+        }
+    }
+
+    &--default {
+        min-width: 12rem;
+        border-radius: .4rem;
+        padding: 1rem;
+        font-weight: $fw-bold;
+    }
+
+    &--singUp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary-clr;
+        color:$light-clr ;
+        transition: 
+            background-color 200ms ease,
+            color 200ms ease,
+            box-shadow 200ms ease;
+    
+        &:hover {
+            color: darken($light-clr, 5%);
+            box-shadow: 0 0 .6rem $light-clr;
+            background-color: lighten($primary-clr, 5%);
+        }
+    }
+
+    &--unactive {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary-clr;
+        color:$light-clr ;
+        transition: box-shadow 200ms ease;
+    
+        &:hover {
+            box-shadow: 0 0 .6rem $dark-clr;
+        }
+    }
+
+    &--simple {
+        background-color: $primary-clr;
+        color:$light-clr ;
+        transition: 
+            background-color 200ms ease,
+            color 200ms ease,
+            box-shadow 200ms ease;
+    
+        &:hover {
+            box-shadow: 0 0 .6rem $dark-clr;
+        }
+    }
+}
+
+
+
+// @function getWidth($gap , $elementsCount) {
+//     $width: calc(100% / #{$elementsCount} - #{$gap});
+
+//     @return $width;
+// }
