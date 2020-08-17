@@ -7,8 +7,18 @@ import render from '../../../../../core/render';
 import './Header.scss';
 
 class Header extends BaseComponent {
-    constructor({ title }) {
+    constructor({
+        state,
+        setState,
+        subscribe,
+        title
+    }) {
         super({
+            state: {
+                authMode: state.authMode,
+                subscribe
+            },
+            setState,
             tagName: 'header',
             className: 'main-layout__header',
             html: `
@@ -33,7 +43,11 @@ class Header extends BaseComponent {
             children: [
                 new ModalWindow({
                     children: [
-                        new Auth()
+                        new Auth({
+                            authMode: this._state.authMode,
+                            setState: this._setState,
+                            subscribe: this._state.subscribe
+                        })
                     ]
                 })
             ],

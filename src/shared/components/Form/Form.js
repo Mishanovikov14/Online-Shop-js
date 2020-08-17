@@ -17,7 +17,24 @@ class Form extends BaseComponent {
             children
         });
 
-        this.addListeners({ submit: onSubmit });
+        this.addListeners({ submit: e => this.handleSubmit(e, onSubmit) });
+    }
+
+    handleSubmit(e, onSubmit) {
+        e.preventDefault();
+
+        const form = this.toNode();
+        const formData = {};
+
+        for (const element of form.elements) {
+            if (element.tagName === 'BUTTON') continue;
+
+            const { name, value } = element;
+
+            formData[name] = value;
+        }
+
+        onSubmit(formData);
     }
 }
 

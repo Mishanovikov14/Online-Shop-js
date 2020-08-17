@@ -15,7 +15,12 @@ class MainLayout extends BaseComponent {
         super({
             className: 'main-layout',
             children: [
-                new Header({ title }),
+                new Header({ 
+                    state,
+                    setState,
+                    subscribe,
+                    title
+                }),
                 new Main({ 
                     state,
                     setState,

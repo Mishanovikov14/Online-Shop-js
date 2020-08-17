@@ -23,4 +23,16 @@
     &__input {
         margin-bottom: 1.5rem;
     }
+
+    &__switch-btn {
+        margin-top: 1.5rem;
+        background-color: transparent;
+        color: $primary-clr;
+        align-self: center;
+        transition: color 200ms ease;
+    
+        &:hover {
+            color: darken($primary-clr, 5%);
+        }
+    }
 }
